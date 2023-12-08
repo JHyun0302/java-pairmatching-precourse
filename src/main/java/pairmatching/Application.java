@@ -5,7 +5,6 @@ import pairmatching.controller.PairController;
 import pairmatching.model.Crews;
 import pairmatching.service.CrewService;
 import pairmatching.validation.PairMatchingValidation;
-import pairmatching.view.input.InputView;
 import pairmatching.view.input.template.InputValidatorTemplate;
 
 public class Application {

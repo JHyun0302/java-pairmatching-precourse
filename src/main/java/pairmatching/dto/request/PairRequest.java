@@ -9,10 +9,13 @@ public class PairRequest {
     private Level level;
     private Mission mission;
 
-    public PairRequest(Course course, Level level, Mission mission) {
+    private PairRequest(Course course, Level level, Mission mission) {
         this.course = course;
         this.level = level;
         this.mission = mission;
     }
-    
+
+    public static PairRequest createPairRequest(Course course, Level level, Mission mission) {
+        return new PairRequest(course, level, mission);
+    }
 }

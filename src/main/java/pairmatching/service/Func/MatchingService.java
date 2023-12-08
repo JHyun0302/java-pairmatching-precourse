@@ -11,15 +11,19 @@ import pairmatching.model.Crew;
 import pairmatching.model.Crews;
 import pairmatching.model.Pair;
 import pairmatching.repository.PairRepository;
+import pairmatching.service.CrewService;
 
-public class PairMatching implements Func {
+public class MatchingService implements Func {
 
     private static final int MAX_RETRIES = 3;
+
+    private final CrewService crewService;
+
 
     // 페어 매칭 기록
     private Map<String, Set<String>> pairs;
 
-    public PairMatching() {
+    public MatchingService() {
         // 기존 페어 매칭 기록 로드
         pairs = PairRepository.pairs();
     }

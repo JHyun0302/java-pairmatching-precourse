@@ -1,20 +1,20 @@
 package pairmatching.service;
 
-import java.util.List;
+import org.xml.sax.SAXException;
 import pairmatching.model.Crews;
 import pairmatching.model.constant.Course;
-import pairmatching.view.input.InputView;
+import pairmatching.util.CrewParser;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+import java.util.List;
 
 public class CrewService {
-    private final InputView inputView;
 
-    public CrewService(InputView inputView) {
-        this.inputView = inputView;
-    }
-
-    public Crews initCrews() {
-        List<String> backend = inputView.readBackendData();
-        List<String> frontend = inputView.readFrontendData();
+    public Crews initCrews() throws ParserConfigurationException, IOException, SAXException {
+        CrewParser crewParser = new CrewParser();
+        List<String> backend = crewParser.parseName(Course.BACKEND);
+        List<String> frontend = crewParser.parseName(Course.FRONTEND);
 
         Crews crews = Crews.createCrews();
         crews.add(Course.BACKEND, backend);

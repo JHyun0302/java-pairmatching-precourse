@@ -1,8 +1,8 @@
 package pairmatching.model.constant;
 
-import static pairmatching.exception.ErrorInputException.ErrorMessage.ERROR_INPUT;
+import pairmatching.exception.CustomException;
 
-import pairmatching.exception.ErrorInputException;
+import static pairmatching.exception.ErrorMessage.ERROR_INPUT;
 
 public enum Level {
     LEVEL1("레벨1"),
@@ -23,6 +23,6 @@ public enum Level {
                 return level;
             }
         }
-        throw new ErrorInputException(ERROR_INPUT);
+        throw CustomException.errorMessage(ERROR_INPUT);
     }
 }
