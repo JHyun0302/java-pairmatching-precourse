@@ -1,10 +1,10 @@
 package pairmatching.view;
 
+import static pairmatching.exception.ErrorMessage.INVALID_REMATCH_REQUEST;
+
 import pairmatching.exception.CustomException;
 import pairmatching.view.console.ConsoleReader;
 import pairmatching.view.console.ConsoleWriter;
-
-import static pairmatching.exception.ErrorMessage.INVALID_REMATCH_REQUEST;
 
 public class ReMatchRequestView {
     private static final String NOTICE = "매칭 정보가 있습니다. 다시 매칭하시겠습니까?";
@@ -13,6 +13,7 @@ public class ReMatchRequestView {
     private static final String NO = "아니오";
 
     public static boolean request() {
+        ConsoleWriter.println();
         ConsoleWriter.printlnMessage(NOTICE);
         ConsoleWriter.printlnMessage(EXAMPLE_RESPONSE);
         return validate(ConsoleReader.enterMessage());

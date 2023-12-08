@@ -1,12 +1,11 @@
 package pairmatching.view;
 
-import pairmatching.model.Pair;
-import pairmatching.model.Pairs;
-import pairmatching.view.console.ConsoleWriter;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import pairmatching.model.Pair;
+import pairmatching.model.Pairs;
+import pairmatching.view.console.ConsoleWriter;
 
 public class PairResponseView {
     private static final String NOTICE = "페어 매칭 결과입니다.";
@@ -14,8 +13,10 @@ public class PairResponseView {
     private static final String TRIPLE_PAIR_RESPONSE = "%s : %s : %s";
 
     public static void response(Pairs pairs) {
+        ConsoleWriter.println();
         ConsoleWriter.printlnMessage(NOTICE);
         printPairs(pairs);
+        ConsoleWriter.println();
     }
 
     private static void printPairs(Pairs pairs) {
@@ -41,7 +42,9 @@ public class PairResponseView {
                     names.get(1),
                     names.get(2)
             );
+            return;
         }
+
         throw new IllegalStateException("페어에 속한 크루의 수가 2 혹은 3이 아닙니다.");
     }
 

@@ -5,7 +5,7 @@ import pairmatching.view.console.ConsoleReader;
 import pairmatching.view.console.ConsoleWriter;
 
 
-public class FunctionRequest {
+public class FunctionRequestView {
     private static final String NOTICE = "기능을 선택하세요.";
     private static final String RESPONSE =
             "1. 페어 매칭\n"
@@ -15,6 +15,7 @@ public class FunctionRequest {
 
 
     public static Function request() {
+        ConsoleWriter.println();
         ConsoleWriter.printlnMessage(NOTICE);
         ConsoleWriter.printlnMessage(RESPONSE);
         return Function.createFunction(ConsoleReader.enterMessage());

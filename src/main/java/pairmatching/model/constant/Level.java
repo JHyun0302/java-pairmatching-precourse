@@ -1,8 +1,8 @@
 package pairmatching.model.constant;
 
-import pairmatching.exception.CustomException;
-
 import static pairmatching.exception.ErrorMessage.ERROR_INPUT;
+
+import pairmatching.exception.CustomException;
 
 public enum Level {
     LEVEL1("레벨1"),
@@ -19,7 +19,7 @@ public enum Level {
 
     public static Level getLevel(String name) {
         for (Level level : Level.values()) {
-            if (level.name().equals(name)) {
+            if (level.name.equals(name)) {
                 return level;
             }
         }

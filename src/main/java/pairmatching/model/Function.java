@@ -1,11 +1,10 @@
 package pairmatching.model;
 
-import pairmatching.exception.CustomException;
+import static pairmatching.exception.ErrorMessage.SELECT_FUNCTION_NOT_EXIST;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static pairmatching.exception.ErrorMessage.SELECT_FUNCTION_MUST_BE_1_OR_2_OR_3_OR_Q;
+import pairmatching.exception.CustomException;
 
 public class Function {
     public static final List<String> RESPONSE = Arrays.asList("1", "2", "3", "Q");
@@ -27,7 +26,7 @@ public class Function {
                 return response;
             }
         }
-        throw CustomException.errorMessage(SELECT_FUNCTION_MUST_BE_1_OR_2_OR_3_OR_Q);
+        throw CustomException.errorMessage(SELECT_FUNCTION_NOT_EXIST);
     }
 
     public String getFunction() {

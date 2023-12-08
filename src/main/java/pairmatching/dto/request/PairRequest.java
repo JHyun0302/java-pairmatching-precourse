@@ -18,4 +18,12 @@ public class PairRequest {
     public static PairRequest createPairRequest(Course course, Level level, Mission mission) {
         return new PairRequest(course, level, mission);
     }
+
+    public Course getCourse() {
+        return course;
+    }
+    
+    public Mission getMission() {
+        return mission;
+    }
 }

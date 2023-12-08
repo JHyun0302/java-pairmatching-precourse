@@ -1,15 +1,14 @@
 package pairmatching.model;
 
-import pairmatching.exception.CustomException;
-import pairmatching.model.constant.Course;
+import static pairmatching.exception.ErrorMessage.PROCESS_IS_NOT_EXISTED;
+import static pairmatching.model.constant.Course.BACKEND;
+import static pairmatching.model.constant.Course.FRONTEND;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import static pairmatching.exception.ErrorMessage.PROCESS_IS_NOT_EXISTED;
-import static pairmatching.model.constant.Course.BACKEND;
-import static pairmatching.model.constant.Course.FRONTEND;
+import pairmatching.exception.CustomException;
+import pairmatching.model.constant.Course;
 
 public class Crews {
     private final List<String> backend;
@@ -41,14 +40,14 @@ public class Crews {
         }
     }
 
-    public List<String> getCrews(Course course, Crews crews) {
+    public List<String> getCrews(Course course) {
         if (course.equals(BACKEND)) {
-            return crews.getBackend();
+            return backend;
         }
         if (course.equals(FRONTEND)) {
-            return crews.getFrontend();
+            return frontend;
         }
+        
         throw CustomException.errorMessage(PROCESS_IS_NOT_EXISTED);
-
     }
 }

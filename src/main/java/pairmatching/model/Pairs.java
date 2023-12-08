@@ -5,12 +5,16 @@ import java.util.Collections;
 import java.util.List;
 
 public class Pairs {
-    private final List<Pair> pairs;
+    private List<Pair> pairs;
 
     private Pairs() {
         this.pairs = new ArrayList<>();
     }
 
+    public void add(Pair pair) {
+        pairs.add(pair);
+    }
+    
     public static Pairs createPairs() {
         return new Pairs();
     }

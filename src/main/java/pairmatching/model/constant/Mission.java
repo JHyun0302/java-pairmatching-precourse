@@ -1,9 +1,11 @@
 package pairmatching.model.constant;
 
-import pairmatching.exception.CustomException;
-
 import static pairmatching.exception.ErrorMessage.ERROR_INPUT;
-import static pairmatching.model.constant.Level.*;
+import static pairmatching.model.constant.Level.LEVEL1;
+import static pairmatching.model.constant.Level.LEVEL2;
+import static pairmatching.model.constant.Level.LEVEL4;
+
+import pairmatching.exception.CustomException;
 
 public enum Mission {
     RACING_CAR("자동차경주", LEVEL1),
@@ -25,9 +27,13 @@ public enum Mission {
         this.level = level;
     }
 
+    public Level getLevel() {
+        return level;
+    }
+
     public static Mission getMission(String name) {
         for (Mission mission : Mission.values()) {
-            if (mission.name().equals(name)) {
+            if (mission.name.equals(name)) {
                 return mission;
             }
         }

@@ -1,8 +1,8 @@
 package pairmatching.model.constant;
 
-import pairmatching.exception.CustomException;
-
 import static pairmatching.exception.ErrorMessage.ERROR_INPUT;
+
+import pairmatching.exception.CustomException;
 
 public enum Course {
     BACKEND("백엔드"),
@@ -14,9 +14,10 @@ public enum Course {
         this.name = name;
     }
 
+
     public static Course getCourse(String name) {
         for (Course course : Course.values()) {
-            if (course.name().equals(name)) {
+            if (course.name.equals(name)) {
                 return course;
             }
         }
