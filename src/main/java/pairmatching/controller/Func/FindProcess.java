@@ -10,7 +10,9 @@ public abstract class FindProcess {
             return new SearchPair(matchingService);
         } else if (function.equals("3")) {
             return new ClearPair(matchingService);
+        } else if (function.equals("Q")) {
+            return new DefaultPair();
         }
-        return new DefaultPair();
+        return new ErrorInput();
     }
 }

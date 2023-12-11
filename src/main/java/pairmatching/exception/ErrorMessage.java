@@ -2,6 +2,7 @@ package pairmatching.exception;
 
 public enum ErrorMessage {
     CANNOT_BE_NULL_OR_EMPTY("입력값이 빈 값이거나 null 값 일 수 없습니다."),
+    INVALID_FUNCTION("유효하지 않은 입력값입니다."),
     SELECT_FUNCTION_NOT_EXIST("기능 선택은 1, 2, 3, Q 값이여야 합니다."),
     ERROR_INPUT("유효하지 않은 입력입니다. 다시 입력해 주세요."),
     NO_MATCHING_HISTORY("매칭 이력이 없습니다."),

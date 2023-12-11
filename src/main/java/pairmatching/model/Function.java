@@ -11,8 +11,8 @@ public class Function {
     private final String function;
 
     public Function(String function) {
-        validate();
         this.function = function;
+        validate();
     }
 
 
